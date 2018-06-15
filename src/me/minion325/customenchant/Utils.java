@@ -2,6 +2,7 @@ package me.minion325.customenchant;
 
 import org.bukkit.inventory.ItemStack;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -9,10 +10,15 @@ public class Utils {
 
     public static Map<Enchant, Integer> getEnchants(ItemStack item){
         List<String> lore = item.getItemMeta().getLore();
+        Map<Enchant, Integer> returnMap = new HashMap<>();
         for (String loreLine : lore){
-
+            Enchant enchant = parseEnchant(loreLine);
+            if (enchant == null) continue;
+            String args[] = loreLine.split(" ");
+            int level = getNumFromRoman(args[args.length-1]);
+            returnMap.put(enchant, level);
         }
-        return null;
+        return returnMap;
     }
 
     public static Enchant parseEnchant(String name){
