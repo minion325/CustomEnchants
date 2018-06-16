@@ -1,0 +1,2 @@
+#This message is displayed to a player when he/she does not have the permission to execute a command associated with this plugin
+no-permission: "&4You do not have enough permission to execute that command"
