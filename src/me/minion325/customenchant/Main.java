@@ -1,10 +1,12 @@
 package me.minion325.customenchant;
 
-public class CustomEnchants extends CustomEnchantPlugin {
+import me.minion325.customenchant.enchanting.EnchantsManager;
+
+public class Main extends CustomEnchantPlugin {
 
     @Override
     public void onEnable() {
-        super.onEnable();
+
     }
 
     @Override
@@ -13,7 +15,7 @@ public class CustomEnchants extends CustomEnchantPlugin {
     }
 
     @Override
-    void registerEnchants(EnchantsManager manager) {
+    public void registerEnchants(EnchantsManager manager) {
 
     }
 }
