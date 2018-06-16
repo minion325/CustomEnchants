@@ -1,2 +1,8 @@
 #This message is displayed to a player when he/she does not have the permission to execute a command associated with this plugin
-no-permission: "&4You do not have enough permission to execute that command"
+no-permission: "&4You do not have enough permission to execute that command."
+
+#This message is displayed when a person tries to enchant an item via command but the enchant does not exist
+no-such-enchant: "&4That enchantment does not exist."
+
+#This message is displayed when an enchant is successfully added to an item
+enchant-added: "&b%enchant% %level% was successfully added to the item in hand."
