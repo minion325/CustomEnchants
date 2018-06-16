@@ -18,15 +18,15 @@ public class Enchant {
         return maxLevel;
     }
 
-    public void onHit(EntityDamageByEntityEvent event){}
+    public void onHit(EntityDamageByEntityEvent event, int level){}
 
-    public void onGetHit(EntityDamageSource event){}
+    public void onGetHit(EntityDamageSource event, int level){}
 
-    public void onMine(BlockBreakEvent event){}
+    public void onMine(BlockBreakEvent event, int level){}
 
-    public void onEquip(ArmorEquipEvent event){}
+    public void onEquip(ArmorEquipEvent event, int level){}
 
-    public void onUnequip(ArmorEquipEvent event){}
+    public void onUnequip(ArmorEquipEvent event, int level){}
 
 
 
