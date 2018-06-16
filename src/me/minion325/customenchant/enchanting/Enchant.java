@@ -1,9 +1,9 @@
 package me.minion325.customenchant.enchanting;
 
 import me.minion325.customenchant.events.ArmorEquipEvent;
-import net.minecraft.server.v1_8_R3.EntityDamageSource;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
 
 public class Enchant {
 
@@ -20,7 +20,7 @@ public class Enchant {
 
     public void onHit(EntityDamageByEntityEvent event, int level){}
 
-    public void onGetHit(EntityDamageSource event, int level){}
+    public void onGetHit(EntityDamageEvent event, int level){}
 
     public void onMine(BlockBreakEvent event, int level){}
 
