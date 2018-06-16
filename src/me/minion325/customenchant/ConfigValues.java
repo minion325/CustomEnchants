@@ -8,7 +8,7 @@ public class ConfigValues {
 
     public static String NO_PERMISSION;
 
-    public void loadConfig(){
+    public static void loadConfig(){
         NO_PERMISSION = ChatColor.translateAlternateColorCodes('&' , plugin.getConfig().getString("no-permission", "&4You do not have permission to execute that command"));
     }
 

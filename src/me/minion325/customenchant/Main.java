@@ -14,6 +14,8 @@ public class Main extends CustomEnchantPlugin {
         this.getCommand("enchant").setExecutor(new Enchant());
         this.getServer().getPluginManager().registerEvents(new PluginEnableListener(), this);
         this.getServer().getPluginManager().registerEvents(new EnchantActivateListener(), this);
+        this.saveDefaultConfig();
+        ConfigValues.loadConfig();
     }
 
     @Override
