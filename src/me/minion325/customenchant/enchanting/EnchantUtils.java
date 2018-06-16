@@ -2,7 +2,9 @@ package me.minion325.customenchant.enchanting;
 
 import org.bukkit.ChatColor;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -62,8 +64,32 @@ public class EnchantUtils {
             }
         }
         return sb.toString();
-
     }
 
+    public static boolean itemHasEnchant(ItemStack is, Enchant enchant){
+        for (Enchant enchant1 : getEnchants(is).keySet()) {
+            if (enchant == enchant1) return true;
+        }
+        return false;
+    }
+
+    public static void removeEnchant(ItemStack itemStack, Enchant enchant){
+        if (!itemHasEnchant(itemStack, enchant)) return;
+        List<String> lore = itemStack.hasItemMeta() ? (itemStack.getItemMeta().hasLore() ? itemStack.getItemMeta().getLore() : new ArrayList<>()) : new ArrayList<>();
+        String loreLine = "";
+        for (String line : lore){
+            if (parseEnchant(loreLine = line)==enchant)break;
+        }
+        lore.remove(loreLine);
+        ItemMeta itemMeta = itemStack.getItemMeta();
+        itemMeta.setLore(lore);
+        itemStack.setItemMeta(itemMeta);
+    }
+
+    public static void addEnchant(ItemStack itemStack, Enchant enchant, int level){
+        List<String> lore = itemStack.hasItemMeta() ? (itemStack.getItemMeta().hasLore() ? itemStack.getItemMeta().getLore() : new ArrayList<>()) : new ArrayList<>();
+        removeEnchant(itemStack, enchant);
+        lore.add(0, ChatColor.GRAY + enchant.getName() + getRomanFromNum(level));
+    }
 
 }
