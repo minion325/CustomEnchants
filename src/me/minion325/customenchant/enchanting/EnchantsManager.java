@@ -38,7 +38,7 @@ public class EnchantsManager {
 
     public Enchant getEnchantByName(String name){
         for (Enchant enchant: enchants.keySet()){
-            if (enchant.getName().equals(name)) return  enchant;
+            if (enchant.getName().equalsIgnoreCase(name)) return  enchant;
         }
         return null;
     }
