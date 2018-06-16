@@ -10,8 +10,8 @@ public class Main extends CustomEnchantPlugin {
 
     @Override
     public void onEnable() {
-        this.getCommand("enchants").setExecutor(new Enchants());
-        this.getCommand("enchant").setExecutor(new Enchant());
+        this.getCommand("cenchants").setExecutor(new Enchants());
+        this.getCommand("cenchant").setExecutor(new Enchant());
         this.getServer().getPluginManager().registerEvents(new PluginEnableListener(), this);
         this.getServer().getPluginManager().registerEvents(new EnchantActivateListener(), this);
         this.saveDefaultConfig();
