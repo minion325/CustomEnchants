@@ -1,3 +1,3 @@
 # CustomEnchants
 A custom enchant API for coding custom enchants
-This is a free touse API fir creating custom enchants on bukkit / spigot servers.
+This is a free to use API for creating custom enchants on bukkit / spigot servers.
