@@ -9,6 +9,13 @@ public class Enchant {
 
     private String name;
     private int maxLevel;
+    private MaterialType[] materialTypes;
+
+    public Enchant(String name, int maxLevel, MaterialType... materials){
+        this.name = name;
+        this.maxLevel = maxLevel;
+        this.materialTypes = materials;
+    }
 
     public String getName() {
         return name;
@@ -28,6 +35,7 @@ public class Enchant {
 
     public void onUnequip(ArmorEquipEvent event, int level){}
 
-
-
+    public MaterialType[] getMaterialTypes() {
+        return materialTypes;
+    }
 }
