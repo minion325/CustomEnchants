@@ -1,5 +1,6 @@
 package me.minion325.customenchant;
 
+import me.minion325.customenchant.anvil.AnvilListener;
 import me.minion325.customenchant.commands.Enchant;
 import me.minion325.customenchant.commands.Enchants;
 import me.minion325.customenchant.enchanting.EnchantsManager;
@@ -15,6 +16,7 @@ public class Main extends CustomEnchantPlugin {
         this.getCommand("cenchant").setExecutor(new Enchant());
         this.getServer().getPluginManager().registerEvents(new PluginEnableListener(), this);
         this.getServer().getPluginManager().registerEvents(new EnchantActivateListener(), this);
+        this.getServer().getPluginManager().registerEvents(new AnvilListener(), this);
         this.saveDefaultConfig();
         ConfigValues.loadConfig();
     }
