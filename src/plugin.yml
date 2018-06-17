@@ -2,7 +2,7 @@ name: CustomEnchantAPI
 main: me.minion325.customenchant.Main
 version: 1.0
 commands:
-  enchant:
+  cenchant:
     description: Enchant an item
-  enchants:
+  cenchants:
     description: Information about enchants
