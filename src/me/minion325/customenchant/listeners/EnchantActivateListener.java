@@ -42,7 +42,7 @@ public class EnchantActivateListener implements Listener {
     public void onGetHit(EntityDamageEvent event){
         if (!(event.getEntity() instanceof Player)) return;
         for (ItemStack armor : ((Player) event.getEntity()).getInventory().getArmorContents()){
-            if (armor != null & armor.hasItemMeta() & armor.getItemMeta().hasLore()){
+            if (armor != null && armor.hasItemMeta() && armor.getItemMeta().hasLore()){
                 Map<Enchant, Integer> enchants = EnchantUtils.getEnchants(armor);
                 for (Enchant enchant : enchants.keySet()) {
                     enchant.onGetHit(event, enchants.get(enchant));
