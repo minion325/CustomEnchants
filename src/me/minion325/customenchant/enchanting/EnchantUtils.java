@@ -15,7 +15,7 @@ public class EnchantUtils {
     private  static int[] ints = new int[] { 1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000 };
 
     public static Map<Enchant, Integer> getEnchants(ItemStack item) {
-        List<String> lore = item.getItemMeta().getLore();
+        List<String> lore = item.hasItemMeta() ? (item.getItemMeta().hasLore() ? item.getItemMeta().getLore() : new ArrayList<>()) : new ArrayList<>();
         Map<Enchant, Integer> returnMap = new HashMap<>();
         for (String loreLine : lore) {
             loreLine = ChatColor.stripColor(loreLine);
@@ -89,7 +89,10 @@ public class EnchantUtils {
     public static void addEnchant(ItemStack itemStack, Enchant enchant, int level){
         List<String> lore = itemStack.hasItemMeta() ? (itemStack.getItemMeta().hasLore() ? itemStack.getItemMeta().getLore() : new ArrayList<>()) : new ArrayList<>();
         removeEnchant(itemStack, enchant);
-        lore.add(0, ChatColor.GRAY + enchant.getName() + getRomanFromNum(level));
+        lore.add(0, ChatColor.GRAY + enchant.getName() + " " + getRomanFromNum(level));
+        ItemMeta im = itemStack.getItemMeta();
+        im.setLore(lore);
+        itemStack.setItemMeta(im);
     }
 
 }
