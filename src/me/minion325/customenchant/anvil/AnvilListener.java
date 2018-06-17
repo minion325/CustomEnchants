@@ -14,6 +14,7 @@ public class AnvilListener implements Listener {
     @SuppressWarnings("unused")
     @EventHandler(ignoreCancelled = true)
     public void onPrepareAnvil(InventoryClickEvent event){
+        //THIS IS UNTESTED NOT SURE IF IT WORKS
         if (!(event.getView().getTopInventory() instanceof AnvilInventory)) return;
         AnvilInventory inventory = (AnvilInventory) event.getView().getTopInventory();
         if (inventory.getItem(2) == null) return;
