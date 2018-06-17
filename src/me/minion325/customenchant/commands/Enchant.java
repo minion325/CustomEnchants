@@ -2,6 +2,7 @@ package me.minion325.customenchant.commands;
 
 import me.minion325.customenchant.ConfigValues;
 import me.minion325.customenchant.enchanting.EnchantUtils;
+import me.minion325.customenchant.enchanting.EnchantsManager;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -35,7 +36,7 @@ public class Enchant implements CommandExecutor {
         }
         try {
             me.minion325.customenchant.enchanting.Enchant enchant;
-            if ((enchant = EnchantUtils.parseEnchant(args[1].replace('_', ' '))) == null) {
+            if ((enchant = EnchantsManager.getEnchantsManager().getEnchantByName(args[0].replace('_', ' '))) == null) {
                 player.sendMessage(ConfigValues.NO_SUCH_ENCHANT);
                 return true;
             }
