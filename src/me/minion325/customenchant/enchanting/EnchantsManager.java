@@ -24,7 +24,7 @@ public class EnchantsManager {
         try {
             Enchant enchant = customEnchantClass.newInstance();
             for (Enchant enchantment : enchants.keySet()) {
-                if (enchant.getClass() == customEnchantClass || enchant.getName().equals(enchantment.getName())) {
+                if (enchantment.getClass() == customEnchantClass || enchant.getName().equals(enchantment.getName())) {
                     Bukkit.getLogger().severe(enchant.getName()+ " could not be registered due to a conflict with another enchant");
                     return;
                 }
