@@ -5,6 +5,7 @@ import me.minion325.customenchant.commands.Enchant;
 import me.minion325.customenchant.commands.Enchants;
 import me.minion325.customenchant.enchanting.EnchantsManager;
 import me.minion325.customenchant.enchants.Death;
+import me.minion325.customenchant.enchants.GetAway;
 import me.minion325.customenchant.listeners.EnchantActivateListener;
 import me.minion325.customenchant.listeners.PluginEnableListener;
 
@@ -29,5 +30,6 @@ public class Main extends CustomEnchantPlugin {
     @Override
     public void registerEnchants(EnchantsManager manager) {
         manager.register(this, Death.class);
+        manager.register(this, GetAway.class);
     }
 }
