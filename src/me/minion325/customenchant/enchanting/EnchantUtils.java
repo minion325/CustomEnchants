@@ -18,7 +18,6 @@ public class EnchantUtils {
         List<String> lore = item.hasItemMeta() ? (item.getItemMeta().hasLore() ? item.getItemMeta().getLore() : new ArrayList<>()) : new ArrayList<>();
         Map<Enchant, Integer> returnMap = new HashMap<>();
         for (String loreLine : lore) {
-            loreLine = ChatColor.stripColor(loreLine);
             Enchant enchant = parseEnchant(loreLine);
             if (enchant == null) continue;
             String args[] = loreLine.split(" ");
@@ -30,7 +29,7 @@ public class EnchantUtils {
 
     public static Enchant parseEnchant(String name) {
         if (!name.contains(" ")) return null;
-        String[] args = name.split(" ");
+        String[] args = ChatColor.stripColor(name).split(" ");
         if (args.length == 2) {
             return EnchantsManager.getEnchantsManager().getEnchantByName(args[0]);
         }
